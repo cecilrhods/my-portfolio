@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Responsive Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("goiULMsD1JzgxShcn");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">MyPortfolio</h1>
+            <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+
+                <ul class="nav-links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#quotes">Quotes</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:cecilkyalo43@email.com"><i class="fas fa-envelope"></i></a>
+                </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/headshot.webp" alt="My Photo" class="profile-pic">
+        <h2>Hello, I'm <span>Cecil Kyalo</span></h2>
+        <p>Welcome to my responsive portfolio website built with HTML & CSS.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate web developer who enjoys creating responsive, user-friendly, and visually appealing websites,
+         also a passionate coder with strong skills in HTML, CSS, Java, and C# with a solid understanding of how to build and style websites, as well as create functional, efficient programs. My enthusiasm for coding drives you to keep improving and exploring new technologies. I approach projects with focus and creativity, turning ideas into practical digital solutions.
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <p>
+            I have strong experience working with various technologies to build modern web applications. 
+            I specialize in front-end development and enjoy writing clean, efficient code.
+        </p>
+        <div class="skill-icons">
+            <i class="fab fa-java" title="Java"></i>
+            <i class="fab fa-react" title="React"></i>
+            <i class="fab fa-html5" title="HTML"></i>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section id="quotes" class="quotes">
+        <h2>Favorite Quote</h2>
+        <p>"Code is like humor. When you have to explain it, it’s bad." — Cory House</p>
+        
+    <!--  Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p class="contact-intro">
+        I’d love to hear from you! Whether you want to collaborate, ask a question, or just say hello — 
+        drop me a message below and I’ll get back to you soon.
+    </p>
+
+    <form id="contact-form">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="user_name" placeholder="Your name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="user_email" placeholder="Your email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+    </div>
+
+    <button type="submit" id="send-btn">Send Message</button>
+  </form>
+</section>
+
+<!-- ===== THANK YOU POPUP ===== -->
+<div class="popup" id="thankYouPopup">
+  <div class="popup-content">
+    <h3>Thank You!</h3>
+    <p>Your message has been sent successfully. I’ll get back to you soon.</p>
+    <button id="closePopup">Close</button>
+  </div>
+</div>
+            </button>
+        </form>
+    </div>
+</section>
+        </form>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 My Responsive Portfolio | Designed by Me</p>
+    </footer>
+    <script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const icon = toggleBtn.querySelector('i');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const dark = document.body.classList.contains('dark-mode');
+    icon.classList = dark ? 'fas fa-sun' : 'fas fa-moon';
+  });
+</script>
+
+<script>
+  const form = document.getElementById("contact-form");
+  const popup = document.getElementById("thankYouPopup");
+  const closeBtn = document.getElementById("closePopup");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const sendBtn = document.getElementById("send-btn");
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Sending...";
+
+    <!-- EmailJS SDK -->
+    emailjs.sendForm('service_fhi4hwx', 'template_t52qidf', this)
+      .then(() => {
+        popup.style.display = "flex";
+        form.reset();
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Send Message";
+      })
+      .catch((error) => {
+        alert("❌ Failed to send message. Please try again.");
+        console.error("EmailJS Error:", error);
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Send Message";
+      });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+</script>
+
+</body>
+</html>

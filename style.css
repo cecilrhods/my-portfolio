@@ -1,0 +1,373 @@
+/* Reset and basic setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+header {
+    background: #222;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+}
+
+.social-icons a {
+    color: white;
+    margin-left: 15px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00bcd4;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #00bcd4, #006994);
+    color: white;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 15px;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* Skills */
+.skill-icons {
+    margin-top: 25px;
+}
+
+.skill-icons i {
+    font-size: 2.5em;
+    margin: 0 15px;
+    color: #00bcd4;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.skill-icons i:hover {
+    transform: scale(1.2);
+    color: #006994;
+}
+
+/* Quotes */
+.quotes p {
+    font-style: italic;
+    color: #555;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-section h2 {
+  font-size: 2.4rem;
+  color: #222;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.contact-section p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== FORM STYLING ===== */
+#contact-form {
+  background: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+#contact-form:hover {
+  transform: translateY(-3px);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* ===== SEND BUTTON ===== */
+#send-btn {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#send-btn:hover {
+  background: oklab(85.732% -0.13313 -0.05979 / 0.61);
+  transform: scale(1.05);
+}
+
+#send-btn:disabled {
+  background: #9ec5fe;
+  cursor: not-allowed;
+}
+
+/* ===== THANK YOU POPUP ===== */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  animation: popUp 0.4s ease;
+}
+
+.popup-content h3 {
+  color: #007bff;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+  background: #0056b3;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes popUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 600px) {
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  #contact-form {
+    padding: 25px 20px;
+  }
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .skill-icons i {
+        font-size: 2em;
+    }
+}
+/* 🌙 Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2);
+    color: #00bcd4;
+}
+
+/* 🌑 Dark Mode Styles */
+body.dark-mode {
+    background: #111;
+    color: #eee;
+}
+
+body.dark-mode header {
+    background: hsl(0, 4%, 71%);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, hsl(0, 30%, 69%), #000);
+}
+
+body.dark-mode section {
+    background: hwb(0 6% 93%);
+    color: #f1f1f1;
+}
+
+body.dark-mode footer {
+    background: hwb(0, 6%, 93%);
+    color: #ccc;
+}
+
+body.dark-mode .skill-icons i {
+    color: #00e1ff;
+}
+
+body.dark-mode .btn-send {
+    background: #00bcd4;
+    color: #fff;
+}
+
+body.dark-mode .btn-send:hover {
+    background: #0097a7;
+}
