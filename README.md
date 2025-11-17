@@ -15,7 +15,7 @@ It is designed to be clean, responsive, and easy for anyone to explore.
 
 ⚡ Fast & Simple — smooth and easy to navigate
 
-git clone https://github.com/your-username/my-portfolio.git
+git clone https://github.com/cecilrhods/my-portfolio.git
 
 index.html
 
