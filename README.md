@@ -20,4 +20,11 @@ The goal is to create a professional online presence and demonstrate my web deve
 2. Navigate through sections using the navbar.  
 3. Scroll to view my projects, skills, and contact details.  
 4. Click on project links to view live demos or repositories.  
-5. Use the contact form or provided email to reach out to me.  
+5. Use the contact form or provided email to reach out to me.
+
+   🛠️ Clone This Project
+
+To clone this repository to your computer, run:
+
+git clone https://github.com/cecilrhods/my-portfolio.git
+
